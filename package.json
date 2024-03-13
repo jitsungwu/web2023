@@ -9,12 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.11",
+    "@mui/material": "^5.14.10",
     "@types/node": "20.6.0",
+    "@types/nodemailer": "^6.4.14",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "axios": "^1.6.2",
+    "encoding": "^0.1.13",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
+    "firebase": "^10.4.0",
+    "next": "^13.5.4",
+    "nodemailer": "^6.9.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.2.2"
