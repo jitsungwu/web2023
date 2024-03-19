@@ -33,6 +33,28 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## 使用既有專案
+
+通常我們會利用 git 將專案上傳到 github/gitlab，下次我們就從 github/gitlab 下載專案。另外，當我們是小組一起工作時，也是需要使用 git。
+
+如果在 github/gitlab 上已經有專案可以使用，就不必產生一個新的專案。首先，新增一個目錄(檔案夾)，例如: project，在 project 目錄下，利用 git clone 下載既有的專案，例如
+
+```bash
+git clone https://github.com/jitsungwu/web2023.git
+```
+
+下載既有專案後，因為一般而言都不會把已安裝的套件上傳到 github/gitlab，所以，執行前必須要再安裝既有的套件
+
+```bash
+npm install
+```
+
+安裝後，再執行專案
+
+```bash
+npm run dev
+```
+
 ## 安裝說明
 
 本範例程式配合 102 學年度「進階 Web 程式設計」課程，細節請詳閱[教材](https://fju-benwu.notion.site/Web-b55bc2f53aba466ebe9b54a1097380cf?pvs=4)
