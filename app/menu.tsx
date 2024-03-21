@@ -3,19 +3,26 @@ import { AppBar, Button, Toolbar } from '@mui/material';
 import { usePathname, useRouter } from 'next/navigation';
 import { AuthContext } from './account/AuthContext';
 import { useContext } from 'react';
+import app from "@/app/_firebase/config"
+import { getAuth } from 'firebase/auth';
 
 export default function Menu() {
   const router = useRouter();
   const pathname = usePathname();
   const authContext = useContext(AuthContext);
+  const auth = getAuth(app);
 
   return (
     <AppBar position="static">
       <Toolbar>
         <Button color="inherit" variant={pathname === "/" ? "outlined" : "text"} onClick={() => router.push("/")}>主頁面</Button>
-        <Button color="inherit" variant={pathname === "/product" ? "outlined" : "text"} onClick={() => router.push("/product")}>產品管理</Button>
+        <Button sx={{ flexGrow: 1, justifyContent: 'flex-start' }} color="inherit" variant={pathname === "/product" ? "outlined" : "text"} onClick={() => router.push("/product")}>產品管理</Button>
         {authContext}
+        {authContext === "" ?
+          <Button color="inherit" onClick={() => router.push("/account")}>登入</Button> :
+          <Button color="inherit" onClick={() => auth.signOut()}>登出</Button>}
       </Toolbar>
+
     </AppBar>
   );
 }

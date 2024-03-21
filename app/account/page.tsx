@@ -13,7 +13,7 @@ export default function Account() {
   const storage = getStorage(app);
   const [account, setAccount] = useState({ email: "", password: "", name: "", photo: "next.svg" });
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("註冊");
+  const [status, setStatus] = useState("登入");
   const [file, setFile] = useState<File>();
   const handleChange = function (e: React.ChangeEvent<HTMLInputElement>) {
     setAccount({ ...account, [e.target.name]: e.target.value })
