@@ -2,7 +2,7 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { usePathname, useRouter } from 'next/navigation';
 import { AuthContext } from './account/AuthContext';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import app from "@/app/_firebase/config"
 import { getAuth } from 'firebase/auth';
 
@@ -11,6 +11,11 @@ export default function Menu() {
   const pathname = usePathname();
   const authContext = useContext(AuthContext);
   const auth = getAuth(app);
+  const user = useState({ email: "", uid: "" })
+  useEffect(() => {
+
+
+  }, [])
 
   return (
     <AppBar position="static">
@@ -20,8 +25,8 @@ export default function Menu() {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
 
         </Typography>
-        {authContext}
-        {authContext === "" ?
+        {authContext.email}
+        {authContext.email === "" ?
           <Button color="inherit" onClick={() => router.push("/account")}>登入</Button> :
           <Button color="inherit" onClick={() => auth.signOut()}>登出</Button>}
 
