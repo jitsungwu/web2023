@@ -11,11 +11,6 @@ export default function Menu() {
   const pathname = usePathname();
   const authContext = useContext(AuthContext);
   const auth = getAuth(app);
-  const user = useState({ email: "", uid: "" })
-  useEffect(() => {
-
-
-  }, [])
 
   return (
     <AppBar position="static">
